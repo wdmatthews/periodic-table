@@ -3,7 +3,7 @@
     no-gutters
     justify="center"
     align="center"
-    class="pa-4"
+    class="pa-1"
   >
     <v-col cols="12">
       <h1

@@ -1,8 +1,13 @@
 <template>
   <EmptyCell :color="color">
-    <v-card-text class="pa-4">
-      H
-    </v-card-text>
+    <p
+      class="symbol ma-0 text-center"
+      v-text="element.symbol"
+    />
+    <p
+      class="name ma-0 text-center"
+      v-text="element.name"
+    />
   </EmptyCell>
 </template>
 
@@ -13,6 +18,23 @@ export default {
       type: String,
       default: '',
     },
+    element: {
+      type: Object,
+      default: () => ({
+        name: 'Hydrogen',
+        symbol: 'H',
+      }),
+    },
   },
 }
 </script>
+
+<style scoped>
+.symbol {
+  font-size: 1rem;
+}
+
+.name {
+  font-size: 0.5rem;
+}
+</style>
