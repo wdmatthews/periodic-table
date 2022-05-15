@@ -1,13 +1,27 @@
 <template>
   <EmptyCell :color="color">
-    <p
-      class="symbol ma-0 text-center"
-      v-text="element.symbol"
-    />
-    <p
-      class="name ma-0 text-center"
-      v-text="element.name"
-    />
+    <div v-show="view == 'Periodic Table'">
+      <p
+        class="symbol ma-0 text-center"
+        v-text="element.symbol"
+      />
+      <p
+        class="name ma-0 text-center"
+        v-text="element.name"
+      />
+    </div>
+    <div v-show="view == 'Ionic States'">
+      
+    </div>
+    <div v-show="view == 'Lewis Dots'">
+      
+    </div>
+    <div v-show="view == 'Electron Configurations'">
+      
+    </div>
+    <div v-show="view == 'Trends'">
+      
+    </div>
   </EmptyCell>
 </template>
 
@@ -24,6 +38,10 @@ export default {
         name: 'Hydrogen',
         symbol: 'H',
       }),
+    },
+    view: {
+      type: String,
+      default: '',
     },
   },
 }

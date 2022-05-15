@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ViewControls ref="viewControls" />
+    <ViewControls @set-view="view = $event" />
     <div class="pa-1">
       <v-row
         v-for="(row, r) in rows"
@@ -12,6 +12,7 @@
           v-for="c in row.left"
           :key="`row-${r}-left-${c}`"
           :element="elements[row.firstElement + c - 1]"
+          :view="view"
         />
         <EmptyCell
           v-if="row.middle > 0"
@@ -21,6 +22,7 @@
           v-for="c in row.right"
           :key="`row-${r}-right-${c}`"
           :element="elements[row.firstElement + row.left + c - 1]"
+          :view="view"
         />
       </v-row>
     </div>
@@ -35,11 +37,7 @@ export default {
   data: vm => ({
     rows,
     elements,
+    view: '',
   }),
-  computed: {
-    view() {
-      return this.$refs.viewControls ? this.$refs.viewControls.view : ''
-    },
-  },
 }
 </script>

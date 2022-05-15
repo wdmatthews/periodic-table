@@ -13,11 +13,12 @@
     </v-col>
     <v-col cols="6">
       <v-slider
-        v-model="viewIndex"
         min="0"
         :max="views.length - 1"
         ticks="always"
         :tick-labels="views"
+        :value="viewIndex"
+        @input="setView"
       />
     </v-col>
   </v-row>
@@ -30,10 +31,16 @@ export default {
   data: vm => ({
     views,
     viewIndex: 0,
+    view: '',
   }),
-  computed: {
-    view() {
-      return this.views[this.viewIndex]
+  created() {
+    this.setView(0)
+  },
+  methods: {
+    setView(viewIndex) {
+      this.viewIndex = viewIndex
+      this.view = this.views[this.viewIndex]
+      this.$emit('set-view', this.view)
     },
   },
 }
