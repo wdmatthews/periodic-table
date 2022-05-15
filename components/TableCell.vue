@@ -4,13 +4,14 @@
       v-show="periodNumber != 0"
       style="position: absolute; top: 50%; left: -4px; transform: translate(-100%, -50%);"
     >
-      {{ periodNumber }}
+      {{ (periodNumber == 1 ? 'Period ' : '') + periodNumber }}
     </span>
     <span
       v-show="groupNumber != 0"
+      class="text-center"
       style="position: absolute; left: 50%; top: -4px; transform: translate(-50%, -100%);"
     >
-      {{ groupNumber }}
+      {{ (groupNumber == 1 ? 'Group ' : '') + groupNumber }}
     </span>
     <div v-show="view == 'Periodic Table'">
       <p
@@ -29,7 +30,10 @@
       
     </div>
     <div v-show="view == 'Electron Configurations'">
-      
+      <p
+        class="symbol ma-0 text-center"
+        v-text="block"
+      />
     </div>
     <div v-show="view == 'Trends'">
       
@@ -38,12 +42,11 @@
 </template>
 
 <script>
+import families from '@/assets/data/families'
+import blocks from '@/assets/data/blocks'
+
 export default {
   props: {
-    color: {
-      type: String,
-      default: '',
-    },
     element: {
       type: Object,
       default: () => ({
@@ -62,6 +65,15 @@ export default {
     groupNumber: {
       type: Number,
       default: 0,
+    },
+    block: {
+      type: String,
+      default: '1s',
+    },
+  },
+  computed: {
+    color() {
+      return this.view === 'Electron Configurations' ? (blocks[this.block[1]] ?? '') : (families[this.element.family] ?? '')
     },
   },
 }
