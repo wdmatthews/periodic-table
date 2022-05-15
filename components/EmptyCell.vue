@@ -5,6 +5,7 @@
     :color="color"
     :flat="color == 'transparent'"
     class="ma-1"
+    style="display: relative;"
   >
     <slot />
   </v-card>

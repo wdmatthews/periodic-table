@@ -1,5 +1,17 @@
 <template>
   <EmptyCell :color="color">
+    <span
+      v-show="periodNumber != 0"
+      style="position: absolute; top: 50%; left: -4px; transform: translate(-100%, -50%);"
+    >
+      {{ periodNumber }}
+    </span>
+    <span
+      v-show="groupNumber != 0"
+      style="position: absolute; left: 50%; top: -4px; transform: translate(-50%, -100%);"
+    >
+      {{ groupNumber }}
+    </span>
     <div v-show="view == 'Periodic Table'">
       <p
         class="symbol ma-0 text-center"
@@ -42,6 +54,14 @@ export default {
     view: {
       type: String,
       default: '',
+    },
+    periodNumber: {
+      type: Number,
+      default: 0,
+    },
+    groupNumber: {
+      type: Number,
+      default: 0,
     },
   },
 }
