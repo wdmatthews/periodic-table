@@ -3,7 +3,7 @@
     <v-chip
       v-for="(color, group, g) in groupings"
       :key="`group-${g}`"
-      class="ma-1"
+      class="ma-1 white--text"
       :color="color"
     >
       {{ group }}

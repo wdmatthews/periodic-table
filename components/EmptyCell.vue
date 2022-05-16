@@ -4,7 +4,7 @@
     :height="height"
     :color="color"
     :flat="color == 'transparent'"
-    class="ma-1"
+    class="ma-1 white--text"
     style="display: relative;"
   >
     <slot />
