@@ -1,7 +1,21 @@
 <template>
   <v-row no-gutters>
     <v-col class="text-right">
-      Labels
+      <div v-show="view == 'Periodic Table'">
+        Labels
+      </div>
+      <div v-show="view == 'Ionic States'">
+        
+      </div>
+      <div v-show="view == 'Lewis Dots'">
+        
+      </div>
+      <div v-show="view == 'Electron Configurations'">
+        
+      </div>
+      <div v-show="view == 'Trends'">
+        
+      </div>
     </v-col>
     <TableCell
       :element="element"
@@ -9,7 +23,21 @@
       is-key
     />
     <v-col>
-      Labels
+      <div v-show="view == 'Periodic Table'">
+        Labels
+      </div>
+      <div v-show="view == 'Ionic States'">
+        
+      </div>
+      <div v-show="view == 'Lewis Dots'">
+        
+      </div>
+      <div v-show="view == 'Electron Configurations'">
+        
+      </div>
+      <div v-show="view == 'Trends'">
+        
+      </div>
     </v-col>
   </v-row>
 </template>
