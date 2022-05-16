@@ -9,8 +9,11 @@
         <v-row no-gutters>
           <v-col cols="2" />
           <TableGroupings :view="view" />
-          <v-col>
-            Key
+          <v-col cols="3">
+            <TableKey
+              :element="elements[0]"
+              :view="view"
+            />
           </v-col>
         </v-row>
       </div>

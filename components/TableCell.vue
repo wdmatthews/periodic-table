@@ -1,5 +1,8 @@
 <template>
-  <EmptyCell :color="color">
+  <EmptyCell
+    :color="color"
+    :is-key="isKey"
+  >
     <span
       v-show="periodNumber != 0"
       style="position: absolute; top: 50%; left: -4px; transform: translate(-100%, -50%);"
@@ -69,6 +72,10 @@ export default {
     block: {
       type: String,
       default: '1s',
+    },
+    isKey: {
+      type: Boolean,
+      default: false,
     },
   },
   computed: {

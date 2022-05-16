@@ -24,6 +24,10 @@ export default {
       type: String,
       default: 'transparent',
     },
+    isKey: {
+      type: Boolean,
+      default: false,
+    },
   },
   data: vm => ({
     width: 64,
@@ -35,6 +39,7 @@ export default {
     let size = Math.floor(Math.min(sizeFromWidth, sizeFromHeight))
     
     if (size > 64) { size = 64 }
+    if (this.isKey) { size = Math.round(size * 2.5) }
     
     this.width = this.columnSize * size + 8 * (this.columnSize - 1)
     this.height = size
