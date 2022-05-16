@@ -5,13 +5,14 @@
   >
     <span
       v-show="periodNumber != 0"
+      class="black--text"
       style="position: absolute; top: 50%; left: -4px; transform: translate(-100%, -50%);"
     >
       {{ (periodNumber == 1 ? 'Period ' : '') + periodNumber }}
     </span>
     <span
       v-show="groupNumber != 0"
-      class="text-center"
+      class="text-center black--text"
       style="position: absolute; left: 50%; top: -4px; transform: translate(-50%, -100%);"
     >
       {{ (groupNumber == 1 ? 'Group ' : '') + groupNumber }}
