@@ -5,7 +5,7 @@
       class="pa-1"
       style="position: relative;"
     >
-      <div style="position: absolute; width: 100%;">
+      <div style="position: absolute; width: 100%; z-index: 2; pointer-events: none;">
         <v-row no-gutters>
           <v-col cols="2" />
           <TableGroupings :view="view" />
