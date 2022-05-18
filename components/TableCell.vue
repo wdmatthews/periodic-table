@@ -2,6 +2,7 @@
   <EmptyCell
     :color="color"
     :is-key="isKey"
+    @select-element="isKey ? null : $emit('select-element', { element, atomicNumber })"
   >
     <span
       v-show="periodNumber != 0"
@@ -32,7 +33,7 @@
       />
       <p
         class="ma-0 text-center"
-        :style="{ 'font-size': `${isKey ? 2.5 * 0.65 : 0.65}rem` }"
+        :style="{ 'font-size': `${isKey ? 2.5 * 0.6 : 0.6}rem` }"
         v-text="element.name"
       />
       <p

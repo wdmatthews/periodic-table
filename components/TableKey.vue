@@ -30,6 +30,7 @@
     </v-col>
     <TableCell
       :element="element"
+      :atomic-number="atomicNumber"
       :view="view"
       is-key
     />
@@ -45,6 +46,10 @@ export default {
         name: 'Hydrogen',
         symbol: 'H',
       }),
+    },
+    atomicNumber: {
+      type: Number,
+      default: 1,
     },
     view: {
       type: String,

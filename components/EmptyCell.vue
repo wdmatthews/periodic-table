@@ -4,8 +4,14 @@
     :height="height"
     :color="color"
     :flat="color == 'transparent'"
+    :ripple="!isKey && color != 'transparent'"
     class="ma-1"
-    style="display: relative; pointer-events: auto;"
+    style="display: relative;"
+    :style="{
+      'pointer-events': color == 'transparent' ? 'none' : 'auto',
+      cursor: !isKey && color != 'transparent' ? 'pointer': 'auto',
+    }"
+    @click.native="isKey ? null : $emit('select-element')"
   >
     <slot />
   </v-card>

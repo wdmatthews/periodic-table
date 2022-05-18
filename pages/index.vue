@@ -11,7 +11,8 @@
           <TableGroupings :view="view" />
           <v-col cols="3">
             <TableKey
-              :element="elements[0]"
+              :element="selectedElement"
+              :atomic-number="selectedANumber"
               :view="view"
             />
           </v-col>
@@ -33,6 +34,7 @@
             ? c : 0"
           :block="getBlock(c, r)"
           :atomic-number="row.firstANumber + c - 1"
+          @select-element="selectElement"
         />
         <EmptyCell
           v-if="row.middle > 0"
@@ -49,6 +51,7 @@
           :atomic-number="(r == 5 || r == 6)
             ? rows[r + 2].firstANumber + c + rows[r + 2].left - 1
             : row.firstANumber + c + row.left - 1"
+          @select-element="selectElement"
         />
       </v-row>
     </div>
@@ -65,6 +68,8 @@ export default {
     groupCount,
     elements,
     view: '',
+    selectedElement: elements[0],
+    selectedANumber: 1,
   }),
   methods: {
     getBlock(group, period) {
@@ -73,6 +78,10 @@ export default {
       if (group < 3 || (group === 18 && period === 0)) { return (period + 1) + 's' }
       if (group < 13) { return period + 'd' }
       return (period + 1) + 'p'
+    },
+    selectElement({ element, atomicNumber }) {
+      this.selectedElement = element
+      this.selectedANumber = atomicNumber
     },
   },
 }
