@@ -1,5 +1,5 @@
 export default {
-  s: '#5f27cd',
+  s: '#9863ff',
   p: '#ee5253',
   d: '#2e86de',
   f: '#10ac84',

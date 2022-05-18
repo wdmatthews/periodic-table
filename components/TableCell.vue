@@ -5,41 +5,73 @@
   >
     <span
       v-show="periodNumber != 0"
-      class="black--text"
       style="position: absolute; top: 50%; left: -4px; transform: translate(-100%, -50%);"
     >
       {{ (periodNumber == 1 ? 'Period ' : '') + periodNumber }}
     </span>
     <span
       v-show="groupNumber != 0"
-      class="text-center black--text"
+      class="text-center"
       style="position: absolute; left: 50%; top: -4px; transform: translate(-50%, -100%);"
     >
       {{ (groupNumber == 1 ? 'Group ' : '') + groupNumber }}
     </span>
-    <div v-show="view == 'Periodic Table'">
+    <div
+      v-show="view == 'Periodic Table'"
+      class="cell"
+    >
       <p
-        class="symbol ma-0 text-center"
+        class="mb-n1 text-center"
+        :style="{ 'font-size': `${isKey ? 2.5 * 1.25 : 1.25}rem` }"
         v-text="element.symbol"
       />
       <p
-        class="name ma-0 text-center"
+        class="ma-0 text-center"
+        :style="{ 'font-size': `${isKey ? 2.5 * 0.65 : 0.65}rem` }"
+        v-text="element.weight"
+      />
+      <p
+        class="ma-0 text-center"
+        :style="{ 'font-size': `${isKey ? 2.5 * 0.65 : 0.65}rem` }"
         v-text="element.name"
       />
-    </div>
-    <div v-show="view == 'Ionic States'">
-      
-    </div>
-    <div v-show="view == 'Lewis Dots'">
-      
-    </div>
-    <div v-show="view == 'Electron Configurations'">
       <p
-        class="symbol ma-0 text-center"
+        style="position: absolute; top: 4px; left: 2px;"
+        :style="{ 'font-size': `${isKey ? 2.5 * 0.65 : 0.65}rem` }"
+        v-text="atomicNumber"
+      />
+    </div>
+    <div
+      v-show="view == 'Ionic States'"
+      class="cell"
+    >
+      
+    </div>
+    <div
+      v-show="view == 'Lewis Dots'"
+      class="cell"
+    >
+      
+    </div>
+    <div
+      v-show="view == 'Electron Configurations'"
+      class="cell"
+    >
+      <p
+        class="ma-0 text-center"
+        :style="{ 'font-size': `${isKey ? 2.5 : 1}rem` }"
+        v-text="element.symbol"
+      />
+      <p
+        class="ma-0 text-center"
+        :style="{ 'font-size': `${isKey ? 2.5 : 1}rem` }"
         v-text="block"
       />
     </div>
-    <div v-show="view == 'Trends'">
+    <div
+      v-show="view == 'Trends'"
+      class="cell"
+    >
       
     </div>
   </EmptyCell>
@@ -78,6 +110,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    atomicNumber: {
+      type: Number,
+      default: 1,
+    },
   },
   computed: {
     color() {
@@ -88,11 +124,10 @@ export default {
 </script>
 
 <style scoped>
-.symbol {
-  font-size: 1rem;
-}
-
-.name {
-  font-size: 0.5rem;
+.cell {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
 }
 </style>

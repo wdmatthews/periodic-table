@@ -32,6 +32,7 @@
           :group-number="(r == 0 || c > rows[r - 1].left && c <= groupCount - rows[r - 1].right && r < 4)
             ? c : 0"
           :block="getBlock(c, r)"
+          :atomic-number="row.firstANumber + c - 1"
         />
         <EmptyCell
           v-if="row.middle > 0"
@@ -45,6 +46,9 @@
           :group-number="(r == 0 || c + row.left + row.middle <= groupCount - rows[r - 1].right && r < 2)
             ? c + row.left + row.middle : 0"
           :block="getBlock(c + row.left + row.middle, r)"
+          :atomic-number="(r == 5 || r == 6)
+            ? rows[r + 2].firstANumber + c + rows[r + 2].left - 1
+            : row.firstANumber + c + row.left - 1"
         />
       </v-row>
     </div>
