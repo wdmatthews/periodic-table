@@ -15,7 +15,8 @@
       class="text-center"
       style="position: absolute; left: 50%; top: -4px; transform: translate(-50%, -100%);"
     >
-      {{ (groupNumber == 1 ? 'Group ' : '') + groupNumber }}
+      <span v-show="view != 'Ionic States'">{{ (groupNumber == 1 ? 'Group ' : '') + groupNumber }}</span>
+      <span v-show="view == 'Ionic States'">{{ (groupNumber == 1 ? 'Charge ' : '') + charge }}</span>
     </span>
     <div
       v-show="view == 'Periodic Table'"
@@ -46,7 +47,28 @@
       v-show="view == 'Ionic States'"
       class="cell"
     >
-      
+      <p
+        v-for="(ion, i) in element.ions"
+        :key="`ion-${i}`"
+        class="mb-n3 text-center"
+        :style="{ 'font-size': `${isKey ? 2.5 * 1.25 : 1.25}rem` }"
+      >
+        {{ element.symbol }}
+        <sup v-show="ion != 0">
+          {{ formatCharge(ion) }}
+        </sup>
+      </p>
+      <p
+        class="mb-0 text-center"
+        :style="{ 'font-size': `${isKey ? 2.5 * 0.6 : 0.6}rem` }"
+        :class="{ 'mt-2': !isKey }"
+        v-text="element.name"
+      />
+      <p
+        style="position: absolute; top: 4px; left: 2px;"
+        :style="{ 'font-size': `${isKey ? 2.5 * 0.65 : 0.65}rem` }"
+        v-text="atomicNumber"
+      />
     </div>
     <div
       v-show="view == 'Lewis Dots'"
@@ -119,6 +141,18 @@ export default {
   computed: {
     color() {
       return this.view === 'Electron Configurations' ? (blocks[this.block[1]] ?? '') : (families[this.element.family] ?? '')
+    },
+    charge() {
+      if (this.groupNumber < 3) { return `${this.groupNumber}+` }
+      if (this.groupNumber === 13) { return '3+' }
+      if (this.groupNumber > 14 && this.groupNumber < 18) { return `${18 - this.groupNumber}-` }
+      return ''
+    },
+  },
+  methods: {
+    formatCharge(ion) {
+      const charge = Math.abs(ion)
+      return `${charge > 1 ? charge : ''}${ion > 0 ? '+' : '-'}`
     },
   },
 }
