@@ -6,7 +6,7 @@
     class="pa-1"
   >
     <v-col cols="12">
-      <h1
+      <h3
         class="text-center"
         v-text="view"
       />

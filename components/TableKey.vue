@@ -16,13 +16,27 @@
         </p>
       </div>
       <div v-show="view == 'Ionic States'">
-        
+        <p class="ma-0 text-right">
+          Atomic Number
+          <br><br>
+          Ion
+          <br><br>
+          Name
+        </p>
       </div>
       <div v-show="view == 'Lewis Dots'">
         
       </div>
       <div v-show="view == 'Electron Configurations'">
-        
+        <p class="ma-0 text-right">
+          Atomic Number
+          <br>
+          Symbol
+          <br><br>
+          Orbital
+          <br>
+          Name
+        </p>
       </div>
       <div v-show="view == 'Trends'">
         

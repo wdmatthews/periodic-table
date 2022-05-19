@@ -81,14 +81,24 @@
       class="cell"
     >
       <p
-        class="ma-0 text-center"
-        :style="{ 'font-size': `${isKey ? 2.5 : 1}rem` }"
+        class="mb-n1 text-center"
+        :style="{ 'font-size': `${isKey ? 2.5 * 1.25 : 1.25}rem` }"
         v-text="element.symbol"
       />
       <p
         class="ma-0 text-center"
-        :style="{ 'font-size': `${isKey ? 2.5 : 1}rem` }"
+        :style="{ 'font-size': `${isKey ? 2.5 * 0.65 : 0.65}rem` }"
         v-text="block"
+      />
+      <p
+        class="ma-0 text-center"
+        :style="{ 'font-size': `${isKey ? 2.5 * 0.6 : 0.6}rem` }"
+        v-text="element.name"
+      />
+      <p
+        style="position: absolute; top: 4px; left: 2px;"
+        :style="{ 'font-size': `${isKey ? 2.5 * 0.65 : 0.65}rem` }"
+        v-text="atomicNumber"
       />
     </div>
     <div
