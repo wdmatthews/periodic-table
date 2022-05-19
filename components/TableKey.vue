@@ -10,7 +10,7 @@
           <br>
           Symbol
           <br><br>
-          Atomic Weight
+          Atomic Mass
           <br>
           Name
         </p>
@@ -39,7 +39,13 @@
         </p>
       </div>
       <div v-show="view == 'Trends'">
-        
+        <p class="ma-0 text-right">
+          Atomic Number
+          <br><br>
+          Symbol
+          <br><br>
+          Name
+        </p>
       </div>
     </v-col>
     <TableCell

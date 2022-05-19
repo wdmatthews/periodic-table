@@ -6,14 +6,16 @@
   >
     <span
       v-show="periodNumber != 0"
+      class="text-center"
       style="position: absolute; top: 50%; left: -4px; transform: translate(-100%, -50%);"
+      :style="periodNumber == 1 ? 'writing-mode: vertical-rl; height: 100%;' : ''"
     >
       {{ (periodNumber == 1 ? 'Period ' : '') + periodNumber }}
     </span>
     <span
       v-show="groupNumber != 0"
       class="text-center"
-      style="position: absolute; left: 50%; top: -4px; transform: translate(-50%, -100%);"
+      style="position: absolute; left: 50%; top: -4px; transform: translate(-50%, -100%); width: 100%;"
     >
       <span v-show="view != 'Ionic States'">{{ (groupNumber == 1 ? 'Group ' : '') + groupNumber }}</span>
       <span v-show="view == 'Ionic States'">{{ (groupNumber == 1 ? 'Charge ' : '') + charge }}</span>
@@ -105,7 +107,21 @@
       v-show="view == 'Trends'"
       class="cell"
     >
-      
+      <p
+        class="mb-1 text-center"
+        :style="{ 'font-size': `${isKey ? 2.5 * 1.25 : 1.25}rem` }"
+        v-text="element.symbol"
+      />
+      <p
+        class="ma-0 text-center"
+        :style="{ 'font-size': `${isKey ? 2.5 * 0.6 : 0.6}rem` }"
+        v-text="element.name"
+      />
+      <p
+        style="position: absolute; top: 4px; left: 2px;"
+        :style="{ 'font-size': `${isKey ? 2.5 * 0.65 : 0.65}rem` }"
+        v-text="atomicNumber"
+      />
     </div>
   </EmptyCell>
 </template>

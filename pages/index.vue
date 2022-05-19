@@ -54,6 +54,50 @@
           @select-element="selectElement"
         />
       </v-row>
+      <v-row
+        v-show="view == 'Trends'"
+        no-gutters
+      >
+        <v-col cols="4">
+          <TrendArrow
+            label="Atomic Size"
+            negative
+          />
+        </v-col>
+        <v-col cols="4">
+          <TrendArrow
+            label="Electronegativity"
+          />
+        </v-col>
+        <v-col cols="4">
+          <TrendArrow
+            label="Ionization Energy"
+          />
+        </v-col>
+      </v-row>
+      <v-row
+        v-show="view == 'Trends'"
+        no-gutters
+        style="transform: translate(145%, -100%) rotate(90deg); position: absolute; top: 45%; width: 50%;"
+      >
+        <v-col cols="4">
+          <TrendArrow
+            label="Electronegativity"
+            negative
+          />
+        </v-col>
+        <v-col cols="4">
+          <TrendArrow
+            label="Ionization Energy"
+            negative
+          />
+        </v-col>
+        <v-col cols="4">
+          <TrendArrow
+            label="Atomic Size"
+          />
+        </v-col>
+      </v-row>
     </div>
   </div>
 </template>
