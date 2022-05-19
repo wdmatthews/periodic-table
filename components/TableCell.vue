@@ -76,7 +76,18 @@
       v-show="view == 'Lewis Dots'"
       class="cell"
     >
-      
+      <p
+        class="text-center"
+        style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);"
+        :style="{ 'font-size': `${isKey ? 2.5 * 1.25 : 1.25}rem` }"
+        v-text="element.symbol"
+      />
+      <LewisDot
+        v-for="(dot, d) in element.dots"
+        :key="`dot-${d}`"
+        :is-key="isKey"
+        :position="dot"
+      />
     </div>
     <div
       v-show="view == 'Electron Configurations'"
@@ -189,6 +200,6 @@ export default {
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: end;
+  justify-content: flex-end;
 }
 </style>

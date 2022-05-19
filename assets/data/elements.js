@@ -1,3 +1,7 @@
+import {
+  ONE_DOT, TWO_DOTS_FULL, TWO_DOTS, THREE_DOTS, FOUR_DOTS, FIVE_DOTS, SIX_DOTS, SEVEN_DOTS, EIGHT_DOTS,
+} from '@/assets/data/lewisDots'
+
 export default [
   {
     name: 'Hydrogen',
@@ -5,6 +9,7 @@ export default [
     family: 'Nonmetals',
     weight: 1.008,
     ions: [1],
+    dots: ONE_DOT,
   },
   {
     name: 'Helium',
@@ -12,6 +17,7 @@ export default [
     family: 'Noble gases',
     weight: 4.0026,
     ions: [0],
+    dots: TWO_DOTS_FULL,
   },
   {
     name: 'Lithium',
@@ -19,6 +25,7 @@ export default [
     family: 'Alkali metals',
     weight: 6.94,
     ions: [1],
+    dots: ONE_DOT,
   },
   {
     name: 'Beryllium',
@@ -26,6 +33,7 @@ export default [
     family: 'Alkaline earth metals',
     weight: 9.0122,
     ions: [2],
+    dots: TWO_DOTS,
   },
   {
     name: 'Boron',
@@ -33,6 +41,7 @@ export default [
     family: 'Basic metals',
     weight: 10.81,
     ions: [3],
+    dots: THREE_DOTS,
   },
   {
     name: 'Carbon',
@@ -40,6 +49,7 @@ export default [
     family: 'Nonmetals',
     weight: 12.011,
     ions: [-4, 4],
+    dots: FOUR_DOTS,
   },
   {
     name: 'Nitrogen',
@@ -47,6 +57,7 @@ export default [
     family: 'Nonmetals',
     weight: 14.007,
     ions: [-3],
+    dots: FIVE_DOTS,
   },
   {
     name: 'Oxygen',
@@ -54,6 +65,7 @@ export default [
     family: 'Nonmetals',
     weight: 15.999,
     ions: [-2],
+    dots: SIX_DOTS,
   },
   {
     name: 'Flourine',
@@ -61,6 +73,7 @@ export default [
     family: 'Halogens',
     weight: 18.998,
     ions: [-1],
+    dots: SEVEN_DOTS,
   },
   {
     name: 'Neon',
@@ -68,5 +81,6 @@ export default [
     family: 'Noble gases',
     weight: 20.180,
     ions: [0],
+    dots: EIGHT_DOTS,
   },
 ]

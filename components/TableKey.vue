@@ -5,7 +5,7 @@
       class="text-right text-h6"
     >
       <div v-show="view == 'Periodic Table'">
-        <p class="ma-0 text-right">
+        <p class="ma-0">
           Atomic Number
           <br>
           Symbol
@@ -16,7 +16,7 @@
         </p>
       </div>
       <div v-show="view == 'Ionic States'">
-        <p class="ma-0 text-right">
+        <p class="ma-0">
           Atomic Number
           <br><br>
           Ion
@@ -25,10 +25,13 @@
         </p>
       </div>
       <div v-show="view == 'Lewis Dots'">
-        
+        <p class="ma-0">
+          <br><br>
+          Symbol
+        </p>
       </div>
       <div v-show="view == 'Electron Configurations'">
-        <p class="ma-0 text-right">
+        <p class="ma-0">
           Atomic Number
           <br>
           Symbol
@@ -39,7 +42,7 @@
         </p>
       </div>
       <div v-show="view == 'Trends'">
-        <p class="ma-0 text-right">
+        <p class="ma-0">
           Atomic Number
           <br><br>
           Symbol
