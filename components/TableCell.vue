@@ -53,6 +53,7 @@
         v-for="(ion, i) in element.ions"
         :key="`ion-${i}`"
         class="mb-n3 text-center"
+        :class="isKey ? 'mb-n5' : 'mb-n3'"
         :style="{ 'font-size': `${isKey ? 2.5 * 1.25 : 1.25}rem` }"
       >
         {{ element.symbol }}
