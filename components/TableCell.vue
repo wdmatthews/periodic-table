@@ -36,7 +36,7 @@
       />
       <p
         class="ma-0 text-center"
-        :style="{ 'font-size': `${isKey ? 2.5 * 0.6 : 0.6}rem` }"
+        :style="{ 'font-size': `${isKey ? 2.5 * 0.55 : 0.55}rem` }"
         v-text="element.name"
       />
       <p
@@ -56,13 +56,19 @@
         :style="{ 'font-size': `${isKey ? 2.5 * 1.25 : 1.25}rem` }"
       >
         {{ element.symbol }}
-        <sup v-show="ion != 0">
+        <sup
+          v-show="ion != 0"
+          :style="{
+            'font-size': `${isKey ? 2.5 * 0.75 : 0.75}rem`,
+            'margin-left': `${isKey ? 2.5 * -4 : -4}px`,
+          }"
+        >
           {{ formatCharge(ion) }}
         </sup>
       </p>
       <p
         class="mb-0 text-center"
-        :style="{ 'font-size': `${isKey ? 2.5 * 0.6 : 0.6}rem` }"
+        :style="{ 'font-size': `${isKey ? 2.5 * 0.55 : 0.55}rem` }"
         :class="{ 'mt-2': !isKey }"
         v-text="element.name"
       />
@@ -105,7 +111,7 @@
       />
       <p
         class="ma-0 text-center"
-        :style="{ 'font-size': `${isKey ? 2.5 * 0.6 : 0.6}rem` }"
+        :style="{ 'font-size': `${isKey ? 2.5 * 0.55 : 0.55}rem` }"
         v-text="element.name"
       />
       <p
@@ -125,7 +131,7 @@
       />
       <p
         class="ma-0 text-center"
-        :style="{ 'font-size': `${isKey ? 2.5 * 0.6 : 0.6}rem` }"
+        :style="{ 'font-size': `${isKey ? 2.5 * 0.55 : 0.55}rem` }"
         v-text="element.name"
       />
       <p
