@@ -2,23 +2,23 @@
   <v-row no-gutters>
     <v-col
       cols="5"
-      class="text-right text-h6"
+      class="text-right text-body-1"
     >
       <div v-show="view == 'Periodic Table'">
         <p class="ma-0">
           Atomic Number
-          <br>
+          <br><br>
           Symbol
           <br><br>
           Atomic Mass
-          <br>
+          <br><br>
           Name
         </p>
       </div>
       <div v-show="view == 'Ionic States'">
         <p class="ma-0">
           Atomic Number
-          <br><br>
+          <br><br><br><br>
           Ion
           <br><br>
           Name
@@ -26,27 +26,27 @@
       </div>
       <div v-show="view == 'Lewis Dots'">
         <p class="ma-0">
-          <br><br>
+          <br><br><br>
           Symbol
         </p>
       </div>
       <div v-show="view == 'Electron Configurations'">
         <p class="ma-0">
           Atomic Number
-          <br>
+          <br><br>
           Symbol
           <br><br>
           Orbital
-          <br>
+          <br><br>
           Name
         </p>
       </div>
       <div v-show="view == 'Trends'">
         <p class="ma-0">
           Atomic Number
-          <br><br>
+          <br><br><br>
           Symbol
-          <br><br>
+          <br><br><br>
           Name
         </p>
       </div>
