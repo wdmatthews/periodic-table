@@ -26,7 +26,7 @@
     >
       <p
         class="mb-n1 text-center"
-        :style="{ 'font-size': `${isKey ? 2.5 * 1.25 : 1.25}rem` }"
+        :style="{ 'font-size': `${isKey ? 2.5 * 1.2 : 1.2}rem` }"
         v-text="element.symbol"
       />
       <p
@@ -36,7 +36,7 @@
       />
       <p
         class="ma-0 text-center"
-        :style="{ 'font-size': `${isKey ? 2.5 * 0.55 : 0.55}rem` }"
+        :style="{ 'font-size': `${isKey ? 2.5 * 0.5 : 0.5}rem` }"
         v-text="element.name"
       />
       <p
@@ -54,7 +54,7 @@
         :key="`ion-${i}`"
         class="mb-n3 text-center"
         :class="isKey ? 'mb-n5' : 'mb-n3'"
-        :style="{ 'font-size': `${isKey ? 2.5 * 1.25 : 1.25}rem` }"
+        :style="{ 'font-size': `${isKey ? 2.5 * 1.2 : 1.2}rem` }"
       >
         {{ element.symbol }}
         <sup
@@ -69,7 +69,7 @@
       </p>
       <p
         class="mb-0 text-center"
-        :style="{ 'font-size': `${isKey ? 2.5 * 0.55 : 0.55}rem` }"
+        :style="{ 'font-size': `${isKey ? 2.5 * 0.5 : 0.5}rem` }"
         :class="{ 'mt-2': !isKey }"
         v-text="element.name"
       />
@@ -86,7 +86,7 @@
       <p
         class="text-center"
         style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);"
-        :style="{ 'font-size': `${isKey ? 2.5 * 1.25 : 1.25}rem` }"
+        :style="{ 'font-size': `${isKey ? 2.5 * 1.2 : 1.2}rem` }"
         v-text="element.symbol"
       />
       <LewisDot
@@ -102,7 +102,7 @@
     >
       <p
         class="mb-n1 text-center"
-        :style="{ 'font-size': `${isKey ? 2.5 * 1.25 : 1.25}rem` }"
+        :style="{ 'font-size': `${isKey ? 2.5 * 1.2 : 1.2}rem` }"
         v-text="element.symbol"
       />
       <p
@@ -112,7 +112,7 @@
       />
       <p
         class="ma-0 text-center"
-        :style="{ 'font-size': `${isKey ? 2.5 * 0.55 : 0.55}rem` }"
+        :style="{ 'font-size': `${isKey ? 2.5 * 0.5 : 0.5}rem` }"
         v-text="element.name"
       />
       <p
@@ -127,12 +127,12 @@
     >
       <p
         class="mb-1 text-center"
-        :style="{ 'font-size': `${isKey ? 2.5 * 1.25 : 1.25}rem` }"
+        :style="{ 'font-size': `${isKey ? 2.5 * 1.2 : 1.2}rem` }"
         v-text="element.symbol"
       />
       <p
         class="ma-0 text-center"
-        :style="{ 'font-size': `${isKey ? 2.5 * 0.55 : 0.55}rem` }"
+        :style="{ 'font-size': `${isKey ? 2.5 * 0.5 : 0.5}rem` }"
         v-text="element.name"
       />
       <p
